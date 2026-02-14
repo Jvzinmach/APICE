@@ -1,0 +1,7 @@
+ARQUIVOS PARA O GITHUB
+
+Este é o único arquivo que você precisa enviar para o GitHub Pages (index.html).
+
+1. Crie o repositório.
+2. Faça upload do index.html dentro dele.
+3. Ative o GitHub Pages nas configurações.

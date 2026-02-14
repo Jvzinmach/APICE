@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ápice | Liberdade Financeira com Inteligência Artificial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: '#1B4332',
+                        gold: '#957D47',
+                        bright: '#2D6A4F',
+                        cream: '#F8F4E1',
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Outfit:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @keyframes subtle-float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .float-animation {
+            animation: subtle-float 6s ease-in-out infinite;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .glow-green {
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.4);
+        }
+
+        .lux-gradient {
+            background: linear-gradient(135deg, #064e3b 0%, #032d22 100%);
+        }
+
+        /* Marquee Animation */
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .marquee-content {
+            display: flex;
+            width: max-content;
+            animation: marquee 30s linear infinite;
+        }
+
+        .marquee-content:hover {
+            animation-play-state: paused;
+        }
+
+        /* Floating CTA mobile */
+        .mobile-cta {
+            position: fixed;
+            bottom: 2rem;
+            left: 1.5rem;
+            right: 1.5rem;
+            z-index: 100;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-cta {
+                display: block;
+            }
+        }
+
+        /* Premium Glow Hover */
+        .glow-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glow-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(149, 125, 71, 0.05) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s;
+            pointer-events: none;
+        }
+
+        .glow-card:hover::before {
+            opacity: 1;
+        }
+    </style>
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1617903499345640');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1617903499345640&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+
+<body class="bg-white text-slate-900 overflow-x-hidden antialiased">
+
+    <!-- Floating Mobile CTA -->
+    <div class="mobile-cta">
+        <a href="#oferta"
+            class="w-full bg-forest text-cream py-5 rounded-2xl shadow-[0_20px_50px_rgba(27,67,50,0.4)] font-black text-sm uppercase tracking-widest flex items-center justify-center gap-3 backdrop-blur-md border border-white/10 active:scale-95 transition-transform">
+            GARANTIR MINHA VAGA AGORA
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+    </div>
+
+    <!-- Urgency Bar -->
+    <div class="bg-forest text-white py-2 text-center text-xs font-black tracking-[0.2em] uppercase px-4">
+        OFERTA EXCLUSIVA DE LANÇAMENTO: ACESSO VITALÍCIO POR TEMPO LIMITADO
+    </div>
+
+    <!-- Navigation -->
+    <nav
+        class="sticky top-0 z-50 bg-cream/90 backdrop-blur-xl border-b border-forest/5 py-4 px-6 md:px-12 transition-all">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-forest flex items-center justify-center shadow-lg shadow-forest/20">
+                    <i data-lucide="crown" class="text-gold w-6 h-6"></i>
+                </div>
+                <span class="text-2xl font-black tracking-tighter text-forest uppercase">Ápice</span>
+            </div>
+            <!-- Nav Links -->
+            <div class="hidden lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:flex items-center gap-10">
+                <a href="#diferenciais"
+                    class="text-[10px] font-black uppercase tracking-widest text-forest/40 hover:text-forest transition-colors">Diferenciais</a>
+                <a href="#como-funciona"
+                    class="text-[10px] font-black uppercase tracking-widest text-forest/40 hover:text-forest transition-colors">Como
+                    funciona</a>
+                <a href="#bonus"
+                    class="text-[10px] font-black uppercase tracking-widest text-forest/40 hover:text-forest transition-colors">Bônus</a>
+                <a href="#depoimentos"
+                    class="text-[10px] font-black uppercase tracking-widest text-forest/40 hover:text-forest transition-colors">Depoimentos</a>
+            </div>
+
+            <a href="#oferta"
+                class="hidden md:block bg-forest text-cream px-8 py-3 rounded-full font-black text-[10px] uppercase tracking-widest transition-all hover:bg-forest/90 shadow-lg shadow-forest/10 relative z-10 hover:scale-105 active:scale-95">
+                Garantir Acesso
+            </a>
+        </div>
+    </nav>
+
+    <!-- 1. HERO SECTION -->
+    <section class="relative pt-16 pb-24 md:pt-24 md:pb-40 px-6 overflow-hidden bg-cream">
+        <!-- Decor Elements -->
+        <div
+            class="absolute top-0 right-0 w-[800px] h-[800px] bg-forest/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2">
+        </div>
+
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
+            <!-- Left Side: Copy -->
+            <div class="lg:w-1/2 z-10 text-left">
+                <div
+                    class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-forest/5 border border-forest/10 text-forest text-xs font-bold tracking-tight mb-10 shadow-sm">
+                    <i data-lucide="sparkles" class="w-4 h-4 text-gold"></i>
+                    Seu sistema financeiro pessoal
+                </div>
+
+                <h1
+                    class="text-4xl md:text-7xl font-sans font-black tracking-tight mb-6 leading-[1.1] md:leading-[1.0] text-forest">
+                    Assuma o controle total do seu dinheiro <br>
+                    <span class="text-gold font-serif italic font-normal text-3xl md:text-7xl">sem planilhas
+                        chatas.</span>
+                </h1>
+
+                <p class="text-lg text-forest/60 mb-10 max-w-xl leading-relaxed font-medium">
+                    O app de finanças com IA que simplifica sua vida. Organize gastos, controle dívidas, planeje seus
+                    sonhos e veja seu patrimônio crescer — tudo em uma interface bonita e intuitiva.
+                </p>
+
+                <!-- CTA -->
+                <div class="flex flex-col sm:flex-row gap-6 mb-10">
+                    <a href="#oferta"
+                        class="w-full sm:w-auto px-10 py-6 bg-forest text-cream font-black rounded-full text-center shadow-2xl transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3 group text-lg sm:text-base">
+                        Quero começar agora
+                        <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Trust Badges -->
+                <div
+                    class="flex flex-row justify-center sm:justify-start items-center gap-6 sm:gap-8 text-[10px] sm:text-xs font-black text-forest/50 uppercase tracking-[0.15em]">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check" class="w-4 h-4 text-gold stroke-[3px]"></i>
+                        Pagamento Único
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check" class="w-4 h-4 text-gold stroke-[3px]"></i>
+                        7 dias de garantia
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Visual Mockup Container -->
+            <div class="lg:w-1/2 relative flex justify-center items-center w-full">
+                <!-- Large Horizontal Box -->
+                <div
+                    class="relative w-full aspect-[16/9] rounded-[3rem] bg-gradient-to-br from-[#E9E4D3] via-cream to-[#E9E4D3] flex items-center justify-center overflow-hidden shadow-[inset_0_2px_40px_rgba(149,125,71,0.1)] group border border-forest/5">
+                    <!-- Subtle Glow -->
+                    <div class="absolute inset-0 bg-white/20 opacity-40 blur-3xl"></div>
+
+                    <!-- Phone Frame -->
+                    <div
+                        class="relative w-full max-w-[190px] aspect-[9/19.5] bg-[#081C15] rounded-[2.5rem] p-2 border-[5px] border-[#2D6A4F]/30 shadow-[-30px_60px_100px_rgba(0,0,0,0.4)] z-10 transform -rotate-12 transition-all duration-700 group-hover:-rotate-6 group-hover:scale-105">
+                        <!-- Notch -->
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-4 bg-[#081C15] rounded-b-xl z-20">
+                        </div>
+
+                        <!-- App Interface -->
+                        <div class="w-full h-full rounded-[2rem] bg-cream overflow-hidden p-3 font-sans relative">
+                            <!-- Header -->
+                            <div class="flex justify-between items-center mb-3">
+                                <i data-lucide="menu" class="w-3 h-3 text-forest"></i>
+                                <span class="text-[8px] font-black text-forest uppercase tracking-tighter">Ápice</span>
+                                <div class="w-3 h-3 rounded-full bg-slate-200"></div>
+                            </div>
+
+                            <!-- Section Title -->
+                            <div class="mb-4">
+                                <p
+                                    class="text-[5px] font-black text-gold uppercase tracking-widest mb-1 flex items-center gap-1">
+                                    <span class="w-1 h-1 rounded-full bg-gold"></span>
+                                    Visão Geral
+                                </p>
+                                <h2 class="text-sm font-black text-forest">Meu <span
+                                        class="text-gold font-serif italic font-normal">Painel</span></h2>
+                            </div>
+
+                            <!-- White Card Container -->
+                            <div class="bg-white rounded-2xl p-3 shadow-sm border border-forest/5 mb-3">
+                                <!-- Safe-to-Spend Row -->
+                                <div class="flex justify-between items-start mb-4">
+                                    <div class="flex gap-2">
+                                        <div
+                                            class="w-7 h-7 rounded-lg bg-forest flex items-center justify-center shrink-0">
+                                            <i data-lucide="crown" class="w-4 h-4 text-gold"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-[7px] font-black text-forest leading-none">Safe-to-Spend</p>
+                                            <p class="text-[4px] font-bold text-forest/40 uppercase mt-0.5">Quanto você
+                                                pode gastar com segurança</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-[4px] font-black text-forest/40 uppercase">Salário Base</p>
+                                        <p class="text-[8px] font-black text-forest">R$ 3.000,00</p>
+                                    </div>
+                                </div>
+
+                                <!-- 4-Grid Stats -->
+                                <div class="grid grid-cols-2 gap-2">
+                                    <div class="bg-cream/40 p-2 rounded-xl">
+                                        <div class="flex items-center gap-1 mb-1">
+                                            <i data-lucide="trending-up" class="w-2 h-2 text-forest/40"></i>
+                                            <span class="text-[5px] font-black text-forest/40 uppercase">Ganhos</span>
+                                        </div>
+                                        <p class="text-[8px] font-black text-forest">R$ 6.200,00</p>
+                                    </div>
+                                    <div class="bg-cream/40 p-2 rounded-xl">
+                                        <div class="flex items-center gap-1 mb-1">
+                                            <i data-lucide="trending-down" class="w-2 h-2 text-forest/40"></i>
+                                            <span class="text-[5px] font-black text-forest/40 uppercase">Despesas</span>
+                                        </div>
+                                        <p class="text-[8px] font-black text-forest">R$ 725,90</p>
+                                    </div>
+                                    <div class="bg-cream/40 p-2 rounded-xl">
+                                        <div class="flex items-center gap-1 mb-1">
+                                            <i data-lucide="wallet" class="w-2 h-2 text-forest/40"></i>
+                                            <span class="text-[5px] font-black text-forest/40 uppercase">Dívidas</span>
+                                        </div>
+                                        <p class="text-[8px] font-black text-forest">R$ 1.750,50</p>
+                                    </div>
+                                    <div class="bg-bright/10 p-2 rounded-xl relative overflow-hidden">
+                                        <div class="flex items-center gap-1 mb-1">
+                                            <i data-lucide="crown" class="w-2 h-2 text-bright"></i>
+                                            <span
+                                                class="text-[5px] font-black text-bright uppercase tracking-tighter">R$
+                                                248,24/DIA</span>
+                                        </div>
+                                        <p class="text-[8px] font-black text-bright">R$ 3.723,60</p>
+                                        <p class="text-[4px] font-bold text-bright/60 mt-0.5">15 dias restantes</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Middle Row -->
+                            <div class="grid grid-cols-2 gap-2 mb-3">
+                                <div class="bg-white rounded-xl p-2.5 border border-forest/5">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <div class="w-5 h-5 rounded-lg bg-bright/10 flex items-center justify-center">
+                                            <i data-lucide="piggy-bank" class="w-3 h-3 text-bright"></i>
+                                        </div>
+                                        <span class="text-[5px] font-black text-forest/40 uppercase">Cofrinho</span>
+                                    </div>
+                                    <p class="text-[8px] font-black text-forest">R$ 0,00</p>
+                                    <p class="text-[4px] font-bold text-forest/20 mt-1 uppercase">Meta: R$ 0,00</p>
+                                </div>
+                                <div class="bg-white rounded-xl p-2.5 border border-forest/5">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <div class="w-5 h-5 rounded-lg bg-gold/10 flex items-center justify-center">
+                                            <i data-lucide="line-chart" class="w-3 h-3 text-gold"></i>
+                                        </div>
+                                        <span
+                                            class="text-[5px] font-black text-forest/40 uppercase">Investimentos</span>
+                                    </div>
+                                    <p class="text-[8px] font-black text-forest">0 ativos</p>
+                                </div>
+                            </div>
+
+                            <!-- Alerts -->
+                            <div class="bg-white rounded-xl p-3 border border-forest/5">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <i data-lucide="bell" class="w-3 h-3 text-red-400"></i>
+                                    <div>
+                                        <p class="text-[6px] font-black text-forest uppercase">Alertas</p>
+                                        <p class="text-[4px] font-bold text-forest/40">2 pagamentos pendentes</p>
+                                    </div>
+                                </div>
+                                <div class="bg-cream/30 rounded-lg p-2 flex justify-between items-center">
+                                    <div class="flex items-center gap-2">
+                                        <i data-lucide="clock" class="w-2.5 h-2.5 text-gold"></i>
+                                        <div>
+                                            <p class="text-[5px] font-black text-forest">Fatura Nubank</p>
+                                            <p class="text-[3.5px] font-bold text-forest/40 uppercase">Vence em 1 dia
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <p class="text-[6px] font-black text-red-500">R$ 1.250,50</p>
+                                </div>
+                            </div>
+
+                            <!-- FAB -->
+                            <div
+                                class="absolute bottom-2 right-2 w-6 h-6 rounded-full bg-gold flex items-center justify-center shadow-lg">
+                                <i data-lucide="sparkles" class="w-3 h-3 text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badge -->
+                    <div
+                        class="absolute bottom-10 right-10 bg-white p-3 rounded-2xl shadow-2xl border border-forest/5 transform rotate-3 z-20">
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+                            <span class="text-[8px] font-black text-forest uppercase tracking-tight">IA
+                                Monitorando</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 2. MARQUEE FEATURES -->
+    <section class="py-12 bg-forest overflow-hidden relative border-y border-white/5">
+        <div class="marquee-content gap-12 md:gap-24 opacity-40">
+            <!-- Set 1 -->
+            <div class="flex items-center gap-4">
+                <i data-lucide="layout-dashboard" class="w-5 h-5 text-gold"></i>
+                <span class="text-[10px] font-black text-cream uppercase tracking-widest">Dashboard Safe-to-Spend</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <i data-lucide="calendar" class="w-5 h-5 text-gold"></i>
+                <span class="text-[10px] font-black text-cream uppercase tracking-widest">Calendário de
+                    Vencimentos</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <i data-lucide="trending-up" class="w-5 h-5 text-gold"></i>
+                <span class="text-[10px] font-black text-cream uppercase tracking-widest">Controle de
+                    Investimentos</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <i data-lucide="sparkles" class="w-5 h-5 text-gold"></i>
+                <span class="text-[10px] font-black text-cream uppercase tracking-widest">IA Advisor Integrada</span>
+            </div>
+            <!-- Duplicated for Marquee -->
+            <div class="flex items-center gap-4">
+                <i data-lucide="layout-dashboard" class="w-5 h-5 text-gold"></i>
+                <span class="text-[10px] font-black text-cream uppercase tracking-widest">Dashboard Safe-to-Spend</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <i data-lucide="calendar" class="w-5 h-5 text-gold"></i>
+                <span class="text-[10px] font-black text-cream uppercase tracking-widest">Calendário de
+                    Vencimentos</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <i data-lucide="trending-up" class="w-5 h-5 text-gold"></i>
+                <span class="text-[10px] font-black text-cream uppercase tracking-widest">Controle de
+                    Investimentos</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <i data-lucide="sparkles" class="w-5 h-5 text-gold"></i>
+                <span class="text-[10px] font-black text-cream uppercase tracking-widest">IA Advisor Integrada</span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 3. WHY APICE SECTION -->
+    <section id="diferenciais" class="py-24 md:py-32 px-6 bg-cream text-center">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-sans font-black tracking-tight mb-20 text-forest">
+                Por que o Ápice é <span
+                    class="text-gold font-serif italic font-normal text-4xl md:text-6xl">diferente?</span>
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-forest/5 text-left transition-all hover:shadow-xl hover:-translate-y-2 group">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center mb-8 transition-colors group-hover:bg-forest/5">
+                        <i data-lucide="sparkles" class="w-6 h-6 text-forest"></i>
+                    </div>
+                    <h3 class="text-lg font-black text-forest mb-4 uppercase tracking-tighter">IA Minimalista</h3>
+                    <p class="text-forest/50 text-sm font-medium leading-relaxed">
+                        Nossa IA analisa seus dados reais e te dá insights curtos e certeiros para você economizar hoje
+                        mesmo.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-forest/5 text-left transition-all hover:shadow-xl hover:-translate-y-2 group">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center mb-8 transition-colors group-hover:bg-forest/5">
+                        <i data-lucide="palette" class="w-6 h-6 text-forest"></i>
+                    </div>
+                    <h3 class="text-lg font-black text-forest mb-4 uppercase tracking-tighter">Categorias Customizáveis
+                    </h3>
+                    <p class="text-forest/50 text-sm font-medium leading-relaxed">
+                        Crie suas próprias categorias de gastos com emojis, cores e limites. O app se adapta ao seu
+                        estilo.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-forest/5 text-left transition-all hover:shadow-xl hover:-translate-y-2 group">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center mb-8 transition-colors group-hover:bg-forest/5">
+                        <i data-lucide="moon" class="w-6 h-6 text-forest"></i>
+                    </div>
+                    <h3 class="text-lg font-black text-forest mb-4 uppercase tracking-tighter">Interface Premium</h3>
+                    <p class="text-forest/50 text-sm font-medium leading-relaxed">
+                        Design 'Quiet Luxury' com modo noturno Verde Floresta. Uma interface que dá prazer de usar.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. WHO IS IT FOR SECTION -->
+    <section id="para-quem"
+        class="py-32 md:py-48 px-6 bg-white text-center border-y border-forest/5 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-forest/5 to-transparent">
+        </div>
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-sans font-black tracking-tight mb-4 text-forest">
+                O Ápice é pra <span class="text-gold font-serif italic font-normal text-4xl md:text-6xl">você?</span>
+            </h2>
+            <p
+                class="text-forest/40 text-sm font-bold mb-24 max-w-lg mx-auto leading-relaxed italic uppercase tracking-widest">
+                Se você se identifica com esses perfis, <br> o Ápice foi feito sob medida.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-forest/5 text-center transition-all hover:shadow-xl group">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center mb-8 mx-auto transition-colors group-hover:bg-forest/5">
+                        <i data-lucide="wallet" class="w-6 h-6 text-forest"></i>
+                    </div>
+                    <h3 class="text-lg font-black text-forest mb-4 uppercase tracking-tighter">Ganha
+                        bem, mas não sabe pra onde vai</h3>
+                    <p class="text-forest/50 text-xs font-semibold leading-relaxed">
+                        Você recebe todo mês, mas no dia 10 já está apertado. O Ápice te mostra
+                        exatamente quanto pode gastar sem apertar.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-forest/5 text-center transition-all hover:shadow-xl group">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center mb-8 mx-auto transition-colors group-hover:bg-forest/5">
+                        <i data-lucide="trending-down" class="w-6 h-6 text-forest"></i>
+                    </div>
+                    <h3 class="text-lg font-black text-forest mb-4 uppercase tracking-tighter">Tem
+                        dívidas e quer sair delas</h3>
+                    <p class="text-forest/50 text-xs font-semibold leading-relaxed">
+                        Parcelamentos, empréstimos, cartão... O Ápice organiza tudo com timeline
+                        visual e alertas de vencimento automáticos.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-forest/5 text-center transition-all hover:shadow-xl group">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center mb-8 mx-auto transition-colors group-hover:bg-forest/5">
+                        <i data-lucide="trending-up" class="w-6 h-6 text-forest"></i>
+                    </div>
+                    <h3 class="text-lg font-black text-forest mb-4 uppercase tracking-tighter">Quer
+                        começar a investir com controle</h3>
+                    <p class="text-forest/50 text-xs font-semibold leading-relaxed">
+                        Antes de investir, organize a base. O Ápice te dá clareza total sobre
+                        ganhos, gastos e quanto sobra por mês.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. HOW IT WORKS SECTION -->
+    <section id="como-funciona" class="py-24 md:py-32 px-6 bg-cream text-center">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-sans font-black tracking-tight mb-20 text-forest">
+                Como <span class="text-gold font-serif italic font-normal text-4xl md:text-6xl">funciona?</span>
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-16 md:gap-8">
+                <!-- Step 1 -->
+                <div>
+                    <div
+                        class="relative w-16 h-16 rounded-full bg-forest flex items-center justify-center mb-6 mx-auto shadow-lg shadow-forest/20">
+                        <i data-lucide="user-plus" class="w-7 h-7 text-cream"></i>
+                        <div
+                            class="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-gold border-2 border-cream flex items-center justify-center text-[10px] font-black text-forest">
+                            1</div>
+                    </div>
+                    <h3 class="text-lg font-black text-forest mb-3 uppercase tracking-tighter">Crie
+                        sua conta em 30 segundos</h3>
+                    <p class="text-forest/40 text-[10px] font-bold leading-relaxed max-w-[200px] mx-auto">
+                        Cadastro rápido com e-mail. Sem burocracia.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div>
+                    <div
+                        class="relative w-16 h-16 rounded-full bg-forest flex items-center justify-center mb-6 mx-auto shadow-lg shadow-forest/20">
+                        <i data-lucide="settings" class="w-7 h-7 text-cream"></i>
+                        <div
+                            class="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-gold border-2 border-cream flex items-center justify-center text-[10px] font-black text-forest">
+                            2</div>
+                    </div>
+                    <h3 class="text-lg font-black text-forest mb-3 uppercase tracking-tighter">
+                        Configure suas categorias e metas</h3>
+                    <p class="text-forest/40 text-[10px] font-bold leading-relaxed max-w-[200px] mx-auto">
+                        Personalize o app com seus emojis, cores e limites.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div>
+                    <div
+                        class="relative w-16 h-16 rounded-full bg-forest flex items-center justify-center mb-6 mx-auto shadow-lg shadow-forest/20">
+                        <i data-lucide="layout-dashboard" class="w-7 h-7 text-cream"></i>
+                        <div
+                            class="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-gold border-2 border-cream flex items-center justify-center text-[10px] font-black text-forest">
+                            3</div>
+                    </div>
+                    <h3 class="text-lg font-black text-forest mb-3 uppercase tracking-tighter">
+                        Acompanhe tudo no Dashboard</h3>
+                    <p class="text-forest/40 text-[10px] font-bold leading-relaxed max-w-[200px] mx-auto">
+                        Veja seu Safe-to-Spend, gráficos e alertas em tempo real.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 6. FEATURE SHOWCASE (PHONES) -->
+    <section class="py-32 md:py-48 px-6 bg-white overflow-hidden relative">
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-forest/10 to-transparent">
+        </div>
+        <div class="max-w-7xl mx-auto space-y-32 md:space-y-64">
+
+            <!-- Row 1: Debts & Payments -->
+            <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-32">
+                <!-- Left: Copy -->
+                <div class="lg:w-1/2 order-2 lg:order-1">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/20 text-forest text-[10px] font-black uppercase tracking-[0.2em] mb-8">
+                        <i data-lucide="package" class="w-3 h-3 text-gold"></i>
+                        Controle de Parcelas
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-sans font-black tracking-tight mb-6 text-forest leading-tight">
+                        Dívidas, parcelamentos e quem te deve — <span
+                            class="text-gold font-serif italic font-normal">tudo sob controle</span>
+                    </h2>
+                    <p class="text-forest/60 text-base md:text-lg mb-8 leading-relaxed font-medium">
+                        Acompanhe cada parcela com indicadores interativos, veja o progresso em
+                        tempo real com timeline visual e alertas automáticos classificados por
+                        urgência.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-sm font-bold text-forest/70">
+                            <i data-lucide="check" class="w-5 h-5 text-gold stroke-[3px]"></i>
+                            Timeline visual com status de vencimento
+                        </li>
+                        <li class="flex items-center gap-3 text-sm font-bold text-forest/70">
+                            <i data-lucide="check" class="w-5 h-5 text-gold stroke-[3px]"></i>
+                            Metas: Vencido, Hoje, Urgente, Próximo
+                        </li>
+                        <li class="flex items-center gap-3 text-sm font-bold text-forest/70">
+                            <i data-lucide="check" class="w-5 h-5 text-gold stroke-[3px]"></i>
+                            Controle de empréstimos em curso
+                        </li>
+                        <li class="flex items-center gap-3 text-sm font-bold text-forest/70">
+                            <i data-lucide="check" class="w-5 h-5 text-gold stroke-[3px]"></i>
+                            Checkboxes para marcar parcelas pagas
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Right: iPhone Mockup (Debts) -->
+                <div class="lg:w-1/2 order-1 lg:order-2 flex justify-center">
+                    <div
+                        class="relative w-full max-w-[280px] aspect-[9/19] bg-[#081C15] rounded-[3rem] p-2.5 border-[6px] border-[#2D6A4F]/20 shadow-[-20px_40px_80px_rgba(0,0,0,0.2)]">
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-5 bg-[#081C15] rounded-b-xl z-20">
+                        </div>
+                        <div class="w-full h-full rounded-[2.5rem] bg-[#FCFBF7] overflow-hidden p-4 font-sans relative">
+                            <!-- Header -->
+                            <div class="flex items-center justify-between mb-4">
+                                <i data-lucide="menu" class="w-4 h-4 text-forest"></i>
+                                <span class="text-[10px] font-medium text-forest/40">Ápice</span>
+                                <div class="w-3 h-3"></div>
+                            </div>
+
+                            <!-- Context Label -->
+                            <p
+                                class="text-[8px] font-black text-[#D97706] uppercase tracking-widest mb-1 flex items-center gap-1">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#D97706]"></span>
+                                GESTÃO DE PASSIVOS
+                            </p>
+
+                            <!-- Title -->
+                            <h3 class="text-2xl font-black text-forest mb-6">Dívidas <span
+                                    class="text-[#D97706] font-serif italic font-normal">& Pagamentos</span></h3>
+
+                            <!-- Month Selector -->
+                            <div class="relative flex items-center justify-center gap-4 mb-8">
+                                <i data-lucide="chevron-left" class="w-3 h-3 text-forest/30"></i>
+                                <div class="flex items-center gap-4 text-[9px] font-bold text-forest/30">
+                                    <span>Jan</span>
+                                    <span class="bg-[#1B4332] text-white px-3 py-1 rounded-lg">Fev</span>
+                                    <span>Mar</span>
+                                    <span>Abr</span>
+                                    <span>Mai</span>
+                                    <span>Jun</span>
+                                </div>
+                                <i data-lucide="chevron-right" class="w-3 h-3 text-forest/30"></i>
+                            </div>
+
+                            <!-- Stats Cards -->
+                            <div class="grid grid-cols-3 gap-3 mb-8">
+                                <div class="bg-white rounded-2xl p-3 border border-forest/5 shadow-sm text-center">
+                                    <div
+                                        class="w-7 h-7 bg-[#FDF2F2] rounded-lg flex items-center justify-center mx-auto mb-3">
+                                        <i data-lucide="trending-down" class="w-4 h-4 text-[#D97706]"></i>
+                                    </div>
+                                    <p class="text-[6px] font-black text-forest/40 uppercase mb-1">TOTAL PENDENTE</p>
+                                    <p class="text-[10px] font-black text-[#D97706]">R$ 2.750,50</p>
+                                </div>
+                                <div class="bg-white rounded-2xl p-3 border border-forest/5 shadow-sm text-center">
+                                    <div
+                                        class="w-7 h-7 bg-[#FFFBEB] rounded-lg flex items-center justify-center mx-auto mb-3">
+                                        <i data-lucide="calendar" class="w-4 h-4 text-[#D97706]"></i>
+                                    </div>
+                                    <p class="text-[6px] font-black text-forest/40 uppercase mb-1">DÍVIDAS ATIVAS</p>
+                                    <p class="text-[12px] font-black text-forest">2</p>
+                                </div>
+                                <div
+                                    class="bg-white rounded-2xl border border-dashed border-forest/10 flex flex-col items-center justify-center gap-2">
+                                    <i data-lucide="plus" class="w-4 h-4 text-forest/20"></i>
+                                    <p class="text-[6px] font-black text-forest/40 uppercase">Nova Dívida</p>
+                                </div>
+                            </div>
+
+                            <!-- Timeline Section -->
+                            <div class="mb-4">
+                                <div class="flex items-center gap-2 mb-4">
+                                    <i data-lucide="trending-down" class="w-3 h-3 text-forest/40"></i>
+                                    <p class="text-[8px] font-black text-forest/40 uppercase tracking-widest">TIMELINE
+                                        DE PAGAMENTOS</p>
+                                </div>
+
+                                <!-- Timeline Items -->
+                                <div class="space-y-4">
+                                    <!-- Item 1 -->
+                                    <div
+                                        class="bg-white rounded-2xl overflow-hidden border border-forest/5 shadow-sm flex">
+                                        <div class="w-14 bg-[#FEF2F2] flex flex-col items-center justify-center p-2">
+                                            <p class="text-[7px] font-black text-red-400 uppercase">FEV</p>
+                                            <p class="text-[14px] font-black text-red-500">14</p>
+                                            <p class="text-[6px] font-black text-red-300 uppercase">SÁB.</p>
+                                        </div>
+                                        <div class="flex-1 p-3 flex justify-between items-center">
+                                            <div>
+                                                <p class="text-[9px] font-black text-forest">Fatura Nubank</p>
+                                                <div class="flex items-center gap-2 mt-1">
+                                                    <span
+                                                        class="text-[6px] font-black text-forest/30 uppercase tracking-tighter">CARTÃO</span>
+                                                    <span class="text-[8px] font-black text-forest">R$ 1.250,50</span>
+                                                </div>
+                                                <span
+                                                    class="inline-block mt-2 px-2 py-0.5 bg-red-50 text-red-400 text-[6px] font-black uppercase rounded-lg">ATRASADO</span>
+                                            </div>
+                                            <div class="flex gap-2 text-forest/20">
+                                                <i data-lucide="check-circle" class="w-4 h-4"></i>
+                                                <i data-lucide="trash-2" class="w-4 h-4"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Item 2 -->
+                                    <div
+                                        class="bg-white rounded-2xl overflow-hidden border border-forest/5 shadow-sm flex">
+                                        <div class="w-14 bg-[#FFFBEB] flex flex-col items-center justify-center p-2">
+                                            <p class="text-[7px] font-black text-[#D97706] uppercase">FEV</p>
+                                            <p class="text-[14px] font-black text-forest">19</p>
+                                            <p class="text-[6px] font-black text-[#D97706]/50 uppercase">QUI.</p>
+                                        </div>
+                                        <div class="flex-1 p-3 flex justify-between items-center">
+                                            <div>
+                                                <p class="text-[9px] font-black text-forest">Empréstimo Pedro</p>
+                                                <div class="flex items-center gap-2 mt-1">
+                                                    <span
+                                                        class="text-[6px] font-black text-forest/30 uppercase tracking-tighter">PESSOAL</span>
+                                                    <span class="text-[8px] font-black text-forest">R$ 500,00</span>
+                                                </div>
+                                            </div>
+                                            <div class="flex gap-2 text-forest/20">
+                                                <i data-lucide="check-circle" class="w-4 h-4"></i>
+                                                <i data-lucide="trash-2" class="w-4 h-4"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bottom FAB -->
+                            <div
+                                class="absolute bottom-4 right-4 w-10 h-10 bg-[#D97706] rounded-full flex items-center justify-center shadow-lg shadow-[#D97706]/20">
+                                <i data-lucide="sparkles" class="w-5 h-5 text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Earnings & Categories -->
+            <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-32">
+                <!-- Left: iPhone Mockup (Categories) -->
+                <div class="lg:w-1/2 flex justify-center">
+                    <div
+                        class="relative w-full max-w-[280px] aspect-[9/19] bg-[#081C15] rounded-[3rem] p-2.5 border-[6px] border-[#2D6A4F]/20 shadow-[20px_40px_80px_rgba(0,0,0,0.2)]">
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-5 bg-[#081C15] rounded-b-xl z-20">
+                        </div>
+                        <div class="w-full h-full rounded-[2.5rem] bg-[#FCFBF7] overflow-hidden p-4 font-sans relative">
+                            <!-- Header -->
+                            <div class="flex items-center justify-between mb-4">
+                                <i data-lucide="menu" class="w-4 h-4 text-forest"></i>
+                                <span class="text-[10px] font-medium text-forest/40">Ápice</span>
+                                <div class="w-3 h-3"></div>
+                            </div>
+
+                            <!-- Title & Action -->
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-2xl font-black text-forest leading-tight">Minhas Despesas <br> <span
+                                        class="font-serif italic font-normal">Variáveis</span></h3>
+                                <button
+                                    class="bg-[#D97706] text-white px-3 py-1.5 rounded-xl text-[10px] font-bold flex items-center gap-1 shadow-md hover:bg-[#D97706]/90 transition-colors">
+                                    <i data-lucide="plus" class="w-3 h-3"></i>
+                                    Nova
+                                </button>
+                            </div>
+
+                            <!-- Info Card -->
+                            <div class="bg-[#F5F5F0] rounded-xl p-3 mb-6 border border-forest/5">
+                                <div class="flex gap-2">
+                                    <i data-lucide="lightbulb"
+                                        class="w-4 h-4 text-[#D97706] fill-[#D97706]/20 shrink-0 mt-0.5"></i>
+                                    <p class="text-[9px] font-medium text-forest/60 leading-relaxed">
+                                        Despesas variáveis são aquelas que dependem dos seus hábitos de consumo ou
+                                        circunstâncias específicas.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Month Selector -->
+                            <div class="relative flex items-center justify-center gap-4 mb-6">
+                                <i data-lucide="chevron-left" class="w-3 h-3 text-forest/30"></i>
+                                <div class="flex items-center gap-4 text-[9px] font-bold text-forest/30">
+                                    <span>Jan</span>
+                                    <span class="bg-[#1B4332] text-white px-3 py-1 rounded-lg">Fev</span>
+                                    <span>Mar</span>
+                                    <span>Abr</span>
+                                    <span>Mai</span>
+                                    <span>Jun</span>
+                                </div>
+                                <i data-lucide="chevron-right" class="w-3 h-3 text-forest/30"></i>
+
+                                <!-- Second Row of Months (Visual only as per design) -->
+                                <div
+                                    class="absolute top-8 left-0 w-full flex justify-center gap-4 text-[9px] font-bold text-forest/30 opacity-50">
+                                    <span>Jul</span>
+                                    <span>Ago</span>
+                                    <span>Set</span>
+                                    <span>Out</span>
+                                    <span>Nov</span>
+                                    <span>Dez</span>
+                                </div>
+                            </div>
+
+                            <!-- Spacer for second row of months -->
+                            <div class="h-4 mb-4"></div>
+
+                            <!-- Table Header -->
+                            <div
+                                class="flex justify-between px-2 mb-2 text-[8px] font-bold text-forest/40 uppercase tracking-wider">
+                                <span class="w-[40%]">Descrição</span>
+                                <span class="w-[30%]">Categoria</span>
+                                <span class="w-[30%] text-right">Data</span>
+                            </div>
+
+                            <!-- Expenses List -->
+                            <div
+                                class="space-y-2 bg-white rounded-2xl shadow-sm border border-forest/5 overflow-hidden">
+                                <!-- Item 1 -->
+                                <div
+                                    class="p-3 border-b border-forest/5 hover:bg-forest/[0.02] transition-colors flex justify-between items-center group">
+                                    <div class="w-[40%] text-[10px] font-black text-forest">Ração</div>
+                                    <div class="w-[30%] text-[9px] font-medium text-slate-400">Outros</div>
+                                    <div class="w-[30%] text-right text-[9px] font-medium text-slate-400">2026-02-13
+                                    </div>
+                                </div>
+                                <!-- Item 2 -->
+                                <div
+                                    class="p-3 border-b border-forest/5 hover:bg-forest/[0.02] transition-colors flex justify-between items-center group">
+                                    <div class="w-[40%] text-[10px] font-black text-forest">Uber</div>
+                                    <div class="w-[30%] text-[9px] font-medium text-slate-400">Uber</div>
+                                    <div class="w-[30%] text-right text-[9px] font-medium text-slate-400">2026-02-13
+                                    </div>
+                                </div>
+                                <!-- Item 3 -->
+                                <div
+                                    class="p-3 border-b border-forest/5 hover:bg-forest/[0.02] transition-colors flex justify-between items-center group">
+                                    <div class="w-[40%] text-[10px] font-black text-forest">Supermercado</div>
+                                    <div class="w-[30%] text-[9px] font-medium text-slate-400">Alimentação</div>
+                                    <div class="w-[30%] text-right text-[9px] font-medium text-slate-400">03/02/2026
+                                    </div>
+                                </div>
+                                <!-- Item 4 -->
+                                <div
+                                    class="p-3 border-b border-forest/5 hover:bg-forest/[0.02] transition-colors flex justify-between items-center group">
+                                    <div class="w-[40%] text-[10px] font-black text-forest">Gasolina</div>
+                                    <div class="w-[30%] text-[9px] font-medium text-slate-400">Transporte</div>
+                                    <div class="w-[30%] text-right text-[9px] font-medium text-slate-400">07/02/2026
+                                    </div>
+                                </div>
+                                <!-- Item 5 -->
+                                <div
+                                    class="p-3 hover:bg-forest/[0.02] transition-colors flex justify-between items-center group">
+                                    <div class="w-[40%] text-[10px] font-black text-forest flex flex-col">
+                                        <span>Netflix +</span>
+                                        <span>Spotify</span>
+                                    </div>
+                                    <div class="w-[30%] text-[9px] font-medium text-slate-400">Lazer</div>
+                                    <div class="w-[30%] text-right text-[9px] font-medium text-slate-400">10/02/2026
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bottom Bar -->
+                            <div class="mt-4 px-2 flex items-center justify-between">
+                                <div class="flex items-center gap-2 text-forest/40 text-[10px] font-medium">
+                                    <i data-lucide="plus" class="w-3 h-3"></i>
+                                    Nova despesa
+                                </div>
+                            </div>
+
+                            <!-- Bottom FAB -->
+                            <div
+                                class="absolute bottom-4 right-4 w-10 h-10 bg-[#D97706] rounded-full flex items-center justify-center shadow-lg shadow-[#D97706]/20">
+                                <i data-lucide="sparkles" class="w-5 h-5 text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Copy -->
+                <div class="lg:w-1/2">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/20 text-forest text-[10px] font-black uppercase tracking-[0.2em] mb-8">
+                        <i data-lucide="bar-chart-3" class="w-3 h-3 text-gold"></i>
+                        Controle Completo
+                    </div>
+                    <h2 class="text-3xl md:text-5xl font-sans font-black tracking-tight mb-6 text-forest leading-tight">
+                        Ganhos, despesas por categoria e <span
+                            class="text-gold font-serif italic font-normal">planejamento
+                            anual</span>
+                    </h2>
+                    <p class="text-forest/60 text-base md:text-lg mb-8 leading-relaxed font-medium">
+                        Registre ganhos com status de recebimento, organize despesas em categorias
+                        customizáveis, defina metas no Cofrinho e acompanhe tudo no controle anual
+                        comparativo.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-sm font-bold text-forest/70">
+                            <i data-lucide="check" class="w-5 h-5 text-gold stroke-[3px]"></i>
+                            Ganhos com status: Recebido, Pendente, Atrasado
+                        </li>
+                        <li class="flex items-center gap-3 text-sm font-bold text-forest/70">
+                            <i data-lucide="check" class="w-5 h-5 text-gold stroke-[3px]"></i>
+                            Despesas por categorias com emojis e cores
+                        </li>
+                        <li class="flex items-center gap-3 text-sm font-bold text-forest/70">
+                            <i data-lucide="check" class="w-5 h-5 text-gold stroke-[3px]"></i>
+                            Cofrinho com metas: método de economia
+                        </li>
+                        <li class="flex items-center gap-3 text-sm font-bold text-forest/70">
+                            <i data-lucide="check" class="w-5 h-5 text-gold stroke-[3px]"></i>
+                            Tabela comparativa anual (ganhos vs gastos)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 7. WHAT YOU GET SECTION (MODULES GRID) -->
+    <section class="py-32 md:py-48 px-6 bg-cream text-center border-t border-forest/5 relative">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-sans font-black tracking-tight mb-4 text-forest leading-tight">
+                Tudo que você recebe <span class="text-gold font-serif italic font-normal text-4xl md:text-6xl">por R$
+                    37</span>
+            </h2>
+            <div class="flex flex-col items-center justify-center mb-20">
+                <p class="text-forest/40 text-[10px] font-black uppercase tracking-[0.3em] mb-4">
+                    VALOR TOTAL SOMADO: R$ 497,00
+                </p>
+                <div class="h-px w-24 bg-gold/30"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Module 1 -->
+                <div
+                    class="bg-white p-8 rounded-[2rem] shadow-sm border border-forest/5 text-left flex items-start gap-5 group hover:shadow-md transition-all">
+                    <div class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center shrink-0">
+                        <i data-lucide="layout-dashboard" class="w-5 h-5 text-forest"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-black text-forest mb-2 uppercase tracking-tight">Dashboard Inteligente
+                        </h3>
+                        <p class="text-[10px] text-forest/50 font-medium leading-relaxed">Safe-to-Spend, gráficos de
+                            pizza, resumo financeiro e salário base configurável.</p>
+                    </div>
+                </div>
+
+                <!-- Module 2 -->
+                <div
+                    class="bg-white p-8 rounded-[2rem] shadow-sm border border-forest/5 text-left flex items-start gap-5 group hover:shadow-md transition-all">
+                    <div class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center shrink-0">
+                        <i data-lucide="trending-up" class="w-5 h-5 text-forest"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-black text-forest mb-2 uppercase tracking-tight">Controle de Ganhos</h3>
+                        <p class="text-[10px] text-forest/50 font-medium leading-relaxed">Registre fontes de renda com
+                            status e filtro mensal.</p>
+                    </div>
+                </div>
+
+                <!-- Module 3 -->
+                <div
+                    class="bg-white p-8 rounded-[2rem] shadow-sm border border-forest/5 text-left flex items-start gap-5 group hover:shadow-md transition-all">
+                    <div class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center shrink-0">
+                        <i data-lucide="pie-chart" class="w-5 h-5 text-forest"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-black text-forest mb-2 uppercase tracking-tight">Despesas por Categoria
+                        </h3>
+                        <p class="text-[10px] text-forest/50 font-medium leading-relaxed">Categorias customizáveis com
+                            emojis, cores e limites.</p>
+                    </div>
+                </div>
+
+                <!-- Module 4 -->
+                <div
+                    class="bg-white p-8 rounded-[2rem] shadow-sm border border-forest/5 text-left flex items-start gap-5 group hover:shadow-md transition-all">
+                    <div class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center shrink-0">
+                        <i data-lucide="shield-alert" class="w-5 h-5 text-forest"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-black text-forest mb-2 uppercase tracking-tight">Gestão de Dívidas</h3>
+                        <p class="text-[10px] text-forest/50 font-medium leading-relaxed">Timeline de pagamentos, badges
+                            de vencimento, progresso.</p>
+                    </div>
+                </div>
+
+                <!-- Module 5 -->
+                <div
+                    class="bg-white p-8 rounded-[2rem] shadow-sm border border-forest/5 text-left flex items-start gap-5 group hover:shadow-md transition-all">
+                    <div class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center shrink-0">
+                        <i data-lucide="calendar" class="w-5 h-5 text-forest"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-black text-forest mb-2 uppercase tracking-tight">Parcelamentos</h3>
+                        <p class="text-[10px] text-forest/50 font-medium leading-relaxed">Checkboxes por parcela,
+                            acompanhamento por cartão.</p>
+                    </div>
+                </div>
+
+                <!-- Module 6 -->
+                <div
+                    class="bg-white p-8 rounded-[2rem] shadow-sm border border-forest/5 text-left flex items-start gap-5 group hover:shadow-md transition-all">
+                    <div class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center shrink-0">
+                        <i data-lucide="users" class="w-5 h-5 text-forest"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-black text-forest mb-2 uppercase tracking-tight">Quem Me Deve</h3>
+                        <p class="text-[10px] text-forest/50 font-medium leading-relaxed">Empréstimos pessoais com
+                            valor, data e status.</p>
+                    </div>
+                </div>
+
+                <!-- Module 7 -->
+                <div
+                    class="bg-white p-8 rounded-[2rem] shadow-sm border border-forest/5 text-left flex items-start gap-5 group hover:shadow-md transition-all">
+                    <div class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center shrink-0">
+                        <i data-lucide="piggy-bank" class="w-5 h-5 text-forest"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-black text-forest mb-2 uppercase tracking-tight">Cofrinho</h3>
+                        <p class="text-[10px] text-forest/50 font-medium leading-relaxed">Metas mensais de economia com
+                            progresso visual.</p>
+                    </div>
+                </div>
+
+                <!-- Module 8 -->
+                <div
+                    class="bg-white p-8 rounded-[2rem] shadow-sm border border-forest/5 text-left flex items-start gap-5 group hover:shadow-md transition-all">
+                    <div class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center shrink-0">
+                        <i data-lucide="heart" class="w-5 h-5 text-forest"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-black text-forest mb-2 uppercase tracking-tight">Lista de Desejos</h3>
+                        <p class="text-[10px] text-forest/50 font-medium leading-relaxed">Sonhos com prioridade, valor e
+                            link de compra.</p>
+                    </div>
+                </div>
+
+                <!-- Module 9 -->
+                <div
+                    class="bg-white p-8 rounded-[2rem] shadow-sm border border-forest/5 text-left flex items-start gap-5 group hover:shadow-md transition-all">
+                    <div class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center shrink-0">
+                        <i data-lucide="bar-chart-2" class="w-5 h-5 text-forest"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-black text-forest mb-2 uppercase tracking-tight">Investimentos</h3>
+                        <p class="text-[10px] text-forest/50 font-medium leading-relaxed">Ativos por corretora e tipo.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Module 10 -->
+                <div
+                    class="bg-white p-8 rounded-[2rem] shadow-sm border border-forest/5 text-left flex items-start gap-5 group hover:shadow-md transition-all">
+                    <div class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center shrink-0">
+                        <i data-lucide="calendar-days" class="w-5 h-5 text-forest"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-black text-forest mb-2 uppercase tracking-tight">Controle Anual</h3>
+                        <p class="text-[10px] text-forest/50 font-medium leading-relaxed">Balanço mensal comparativo.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Module 11 -->
+                <div
+                    class="bg-white p-8 rounded-[2rem] shadow-sm border border-forest/5 text-left flex items-start gap-5 group hover:shadow-md transition-all">
+                    <div class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center shrink-0">
+                        <i data-lucide="infinity" class="w-5 h-5 text-forest"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-black text-forest mb-2 uppercase tracking-tight">Timeline Infinita</h3>
+                        <p class="text-[10px] text-forest/50 font-bold leading-relaxed">Histórico completo de toda sua
+                            vida financeira sem limites.</p>
+                    </div>
+                </div>
+
+                <!-- Module 12 -->
+                <div
+                    class="bg-white p-8 rounded-[2rem] shadow-sm border border-forest/5 text-left flex items-start gap-5 group hover:shadow-md transition-all">
+                    <div class="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center shrink-0">
+                        <i data-lucide="shield-check" class="w-5 h-5 text-forest"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-black text-forest mb-2 uppercase tracking-tight">Segurança Nível
+                            Bancário</h3>
+                        <p class="text-[10px] text-forest/50 font-bold leading-relaxed">Dados protegidos com a mesma
+                            tecnologia de apps de bancos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8. SOCIAL PROOF SECTION (Clean Cards Style) -->
+        <section id="depoimentos" class="py-24 md:py-32 px-4 bg-[#fdfdfd] relative overflow-hidden">
+
+            <div class="max-w-6xl mx-auto relative z-10">
+                <h2
+                    class="text-3xl md:text-5xl font-sans font-black tracking-tight mb-16 text-center text-forest leading-tight">
+                    Resultados que <span class="text-gold font-serif italic font-normal text-4xl md:text-6xl">falam por
+                        si</span>
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- 1. Lucas M. (Designer) -->
+                    <div
+                        class="bg-white p-8 rounded-[20px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-slate-100 flex flex-col gap-6 hover:-translate-y-1 transition-transform duration-300">
+                        <!-- Stars -->
+                        <div class="flex gap-1 text-[#F59E0B]">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+
+                        <!-- Text -->
+                        <p class="text-slate-500 italic text-[17px] leading-relaxed font-medium">
+                            "Nunca fui de controlar meu dinheiro, mas o Ápice é tão bonito e fácil que virou hábito. O
+                            Safe-to-Spend mudou minha vida."
+                        </p>
+
+                        <!-- Profile -->
+                        <div class="flex items-center gap-4 mt-auto">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&h=150"
+                                class="w-12 h-12 rounded-full object-cover shrink-0">
+                            <div>
+                                <p class="text-[#1B4332] font-bold text-[15px]">Lucas M.</p>
+                                <p class="text-slate-400 text-[13px]">27 anos • Designer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Ana P. (Advogada) -->
+                    <div
+                        class="bg-white p-8 rounded-[20px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-slate-100 flex flex-col gap-6 hover:-translate-y-1 transition-transform duration-300">
+                        <!-- Stars -->
+                        <div class="flex gap-1 text-[#F59E0B]">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+
+                        <!-- Text -->
+                        <p class="text-slate-500 italic text-[17px] leading-relaxed font-medium">
+                            "Finalmente um app que controla parcelamentos de verdade. Os checkboxes de parcela são
+                            geniais. Organização total!"
+                        </p>
+
+                        <!-- Profile -->
+                        <div class="flex items-center gap-4 mt-auto">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&h=150"
+                                class="w-12 h-12 rounded-full object-cover shrink-0">
+                            <div>
+                                <p class="text-[#1B4332] font-bold text-[15px]">Ana P.</p>
+                                <p class="text-slate-400 text-[13px]">32 anos • Advogada</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Pedro H. (Dev) -->
+                    <div
+                        class="bg-white p-8 rounded-[20px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-slate-100 flex flex-col gap-6 hover:-translate-y-1 transition-transform duration-300">
+                        <!-- Stars -->
+                        <div class="flex gap-1 text-[#F59E0B]">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+
+                        <!-- Text -->
+                        <p class="text-slate-500 italic text-[17px] leading-relaxed font-medium">
+                            "O modo escuro é lindo e a IA dá dicas que fazem sentido. Melhor investimento que já fiz
+                            para minha paz mental."
+                        </p>
+
+                        <!-- Profile -->
+                        <div class="flex items-center gap-4 mt-auto">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&h=150"
+                                class="w-12 h-12 rounded-full object-cover shrink-0">
+                            <div>
+                                <p class="text-[#1B4332] font-bold text-[15px]">Pedro H.</p>
+                                <p class="text-slate-400 text-[13px]">24 anos • Dev Frontend</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Carla S. (Nutricionista) -->
+                    <div
+                        class="bg-white p-8 rounded-[20px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-slate-100 flex flex-col gap-6 hover:-translate-y-1 transition-transform duration-300">
+                        <!-- Stars -->
+                        <div class="flex gap-1 text-[#F59E0B]">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+
+                        <!-- Text -->
+                        <p class="text-slate-500 italic text-[17px] leading-relaxed font-medium">
+                            "Eu não sabia para onde meu dinheiro ia. Com o Ápice, consegui juntar para minha
+                            pós-graduação em 3 meses!"
+                        </p>
+
+                        <!-- Profile -->
+                        <div class="flex items-center gap-4 mt-auto">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150"
+                                class="w-12 h-12 rounded-full object-cover shrink-0">
+                            <div>
+                                <p class="text-[#1B4332] font-bold text-[15px]">Carla S.</p>
+                                <p class="text-slate-400 text-[13px]">29 anos • Nutricionista</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Rafael B. (Empresário) -->
+                    <div
+                        class="bg-white p-8 rounded-[20px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-slate-100 flex flex-col gap-6 hover:-translate-y-1 transition-transform duration-300">
+                        <!-- Stars -->
+                        <div class="flex gap-1 text-[#F59E0B]">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+
+                        <!-- Text -->
+                        <p class="text-slate-500 italic text-[17px] leading-relaxed font-medium">
+                            "A metodologia 50/30/20 automática é sensacional. Separo o dinheiro da empresa e o meu sem
+                            dor de cabeça."
+                        </p>
+
+                        <!-- Profile -->
+                        <div class="flex items-center gap-4 mt-auto">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&h=150"
+                                class="w-12 h-12 rounded-full object-cover shrink-0">
+                            <div>
+                                <p class="text-[#1B4332] font-bold text-[15px]">Rafael B.</p>
+                                <p class="text-slate-400 text-[13px]">35 anos • Empresário</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Juliana K. (Estudante) -->
+                    <div
+                        class="bg-white p-8 rounded-[20px] shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-slate-100 flex flex-col gap-6 hover:-translate-y-1 transition-transform duration-300">
+                        <!-- Stars -->
+                        <div class="flex gap-1 text-[#F59E0B]">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+
+                        <!-- Text -->
+                        <p class="text-slate-500 italic text-[17px] leading-relaxed font-medium">
+                            "Achei que fosse difícil de usar, mas é super intuitivo. Adoro ver minhas metas serem
+                            preenchidas!"
+                        </p>
+
+                        <!-- Profile -->
+                        <div class="flex items-center gap-4 mt-auto">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&h=150"
+                                class="w-12 h-12 rounded-full object-cover shrink-0">
+                            <div>
+                                <p class="text-[#1B4332] font-bold text-[15px]">Juliana K.</p>
+                                <p class="text-slate-400 text-[13px]">22 anos • Estudante</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. BONUS SECTION -->
+        <section class="py-24 md:py-32 px-6 bg-forest relative overflow-hidden text-center">
+            <div class="max-w-4xl mx-auto relative z-10">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/20 text-gold text-[10px] font-black uppercase tracking-widest mb-6">
+                    <i data-lucide="gift" class="w-3 h-3"></i>
+                    Bônus Exclusivos
+                </div>
+                <h2 class="text-3xl md:text-5xl font-sans font-black tracking-tight mb-20 text-cream leading-tight">
+                    Além do app, você leva <span class="text-gold">3 bônus</span>
+                </h2>
+
+                <div class="space-y-6 text-left">
+                    <!-- Bonus 1 -->
+                    <div
+                        class="bg-white/[0.03] border border-white/10 p-6 sm:p-8 rounded-3xl flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-6 sm:gap-8 group hover:bg-white/[0.05] transition-all">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 text-gold font-black text-xl">
+                            01</div>
+                        <div>
+                            <h3 class="text-lg font-black text-cream mb-2 uppercase tracking-tight">Modo Noturno Premium
+                            </h3>
+                            <p class="text-cream/40 text-sm font-medium leading-relaxed">Dark mode exclusivo com tema
+                                Verde Floresta — elegante e confortável para uso noturno.</p>
+                            <p class="text-[10px] text-gold font-black mt-2 uppercase tracking-widest opacity-60">Valor:
+                                <span class="line-through">R$ 19,90</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Bonus 2 -->
+                    <div
+                        class="bg-white/[0.03] border border-white/10 p-6 sm:p-8 rounded-3xl flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-6 sm:gap-8 group hover:bg-white/[0.05] transition-all">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 text-gold font-black text-xl">
+                            02</div>
+                        <div>
+                            <h3 class="text-lg font-black text-cream mb-2 uppercase tracking-tight">Assistente IA
+                                Financeiro</h3>
+                            <p class="text-cream/40 text-sm font-medium leading-relaxed">Analisa seus dados reais e te
+                                dá dicas personalizadas e diretas para economizar.</p>
+                            <p class="text-[10px] text-gold font-black mt-2 uppercase tracking-widest opacity-60">Valor:
+                                <span class="line-through">R$ 29,90</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Bonus 3 -->
+                    <div
+                        class="bg-white/[0.03] border border-white/10 p-6 sm:p-8 rounded-3xl flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-6 sm:gap-8 group hover:bg-white/[0.05] transition-all">
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 text-gold font-black text-xl">
+                            03</div>
+                        <div>
+                            <h3 class="text-lg font-black text-cream mb-2 uppercase tracking-tight">App Instalável (PWA)
+                            </h3>
+                            <p class="text-cream/40 text-sm font-medium leading-relaxed">Instale na tela do celular como
+                                app nativo — sem App Store, acesso rápido.</p>
+                            <p class="text-[10px] text-gold font-black mt-2 uppercase tracking-widest opacity-60">Valor:
+                                <span class="line-through">R$ 14,90</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- 10. THE OFFER SECTION -->
+        <section id="oferta" class="py-24 md:py-32 px-6 bg-cream relative overflow-hidden text-center">
+            <div class="max-w-3xl mx-auto relative">
+
+                <!-- Promotional Badge -->
+                <div class="absolute -top-6 left-1/2 -translate-x-1/2 z-20">
+                    <div
+                        class="bg-gold text-forest text-[11px] font-black uppercase tracking-widest px-8 py-3 rounded-full shadow-xl flex items-center gap-2 border-2 border-white">
+                        <i data-lucide="flame" class="w-4 h-4 fill-forest"></i>
+                        Preço promocional por tempo limitado
+                    </div>
+                </div>
+
+                <!-- Main Offer Card -->
+                <div class="bg-white rounded-[3rem] p-12 md:p-20 shadow-2xl relative border border-forest/5">
+
+                    <!-- Crown Icon -->
+                    <div class="mb-8 flex justify-center">
+                        <i data-lucide="crown" class="w-12 h-12 text-gold"></i>
+                    </div>
+
+                    <h2 class="text-4xl md:text-5xl font-black tracking-tight text-forest mb-4 leading-tight">
+                        Acesso vitalício ao Ápice
+                    </h2>
+                    <p class="text-forest/40 text-sm font-bold uppercase tracking-widest mb-12">
+                        App completo + 3 bônus exclusivos
+                    </p>
+
+                    <!-- Price Area -->
+                    <div class="mb-12">
+                        <p class="text-forest/30 text-lg font-bold line-through mb-1">R$ 97,00</p>
+                        <p class="text-forest/40 text-xs font-black uppercase tracking-widest mb-2">por apenas</p>
+                        <div
+                            class="text-6xl sm:text-7xl font-black text-forest tracking-tighter flex items-center justify-center gap-2">
+                            <span class="text-3xl sm:text-4xl">R$</span> 37
+                        </div>
+                        <p class="text-forest/30 text-[10px] font-bold uppercase tracking-widest mt-4">
+                            Pagamento único • Sem mensalidade
+                        </p>
+                    </div>
+
+                    <!-- Feature List -->
+                    <div class="max-w-sm mx-auto space-y-4 mb-16 text-left">
+                        <div class="flex items-center gap-3 text-forest/70 font-bold text-xs uppercase tracking-tight">
+                            <i data-lucide="check" class="w-4 h-4 text-gold stroke-[4px]"></i>
+                            10 módulos financeiros completos
+                        </div>
+                        <div class="flex items-center gap-3 text-forest/70 font-bold text-xs uppercase tracking-tight">
+                            <i data-lucide="check" class="w-4 h-4 text-gold stroke-[4px]"></i>
+                            Assistente IA incluso
+                        </div>
+                        <div class="flex items-center gap-3 text-forest/70 font-bold text-xs uppercase tracking-tight">
+                            <i data-lucide="check" class="w-4 h-4 text-gold stroke-[4px]"></i>
+                            Modo noturno premium
+                        </div>
+                        <div class="flex items-center gap-3 text-forest/70 font-bold text-xs uppercase tracking-tight">
+                            <i data-lucide="check" class="w-4 h-4 text-gold stroke-[4px]"></i>
+                            App instalável no celular (PWA)
+                        </div>
+                        <div class="flex items-center gap-3 text-forest/70 font-bold text-xs uppercase tracking-tight">
+                            <i data-lucide="check" class="w-4 h-4 text-gold stroke-[4px]"></i>
+                            Atualizações futuras incluídas
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <a href="https://ambienteseguro.org.ua/c/f7d34d06b5"
+                        class="block w-full py-8 bg-forest text-white text-xl font-black rounded-3xl shadow-2xl hover:bg-forest/90 transition-all hover:scale-[1.02] active:scale-[0.98] mb-8">
+                        Quero organizar minha vida financeira agora
+                    </a>
+
+                    <!-- Satisfaction -->
+                    <div
+                        class="flex items-center justify-center gap-2 text-forest/30 text-[10px] font-black uppercase tracking-widest">
+                        <i data-lucide="shield" class="w-4 h-4"></i>
+                        Garantia de 7 dias — devolvemos 100% do seu dinheiro
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. FAQ SECTION -->
+        <!-- 11. FAQ SECTION -->
+        <section class="py-32 md:py-48 px-6 bg-white text-center border-t border-forest/5 relative">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-forest/5 to-transparent">
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-sans font-black tracking-tight mb-24 text-forest leading-tight">
+                    Perguntas <span
+                        class="text-gold font-serif italic font-normal text-4xl md:text-6xl">frequentes</span>
+                </h2>
+
+                <div class="space-y-6 text-left">
+                    <!-- FAQ 1 -->
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-sm border border-forest/5 group hover:border-forest/10 transition-all">
+                        <h3 class="text-base font-black text-forest mb-2">Funciona no celular?</h3>
+                        <p class="text-forest/50 text-xs font-medium leading-relaxed">Sim! O Ápice é 100% responsivo e
+                            pode ser instalado como app nativo (PWA). Android e iPhone.</p>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-sm border border-forest/5 group hover:border-forest/10 transition-all">
+                        <h3 class="text-base font-black text-forest mb-2">Preciso pagar mensalidade?</h3>
+                        <p class="text-forest/50 text-xs font-medium leading-relaxed">Não! Pagamento único de R$ 37. Use
+                            para sempre com todas as atualizações futuras.</p>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-sm border border-forest/5 group hover:border-forest/10 transition-all">
+                        <h3 class="text-base font-black text-forest mb-2">E se eu não gostar?</h3>
+                        <p class="text-forest/50 text-xs font-medium leading-relaxed">7 dias de garantia incondicional.
+                            Devolvemos 100% sem burocracia.</p>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-sm border border-forest/5 group hover:border-forest/10 transition-all">
+                        <h3 class="text-base font-black text-forest mb-2">Meus dados ficam seguros?</h3>
+                        <p class="text-forest/50 text-xs font-medium leading-relaxed">Sim. Dados criptografados em
+                            servidores seguros com autenticação individual.</p>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-sm border border-forest/5 group hover:border-forest/10 transition-all">
+                        <h3 class="text-base font-black text-forest mb-2">O assistente IA está incluso?</h3>
+                        <p class="text-forest/50 text-xs font-medium leading-relaxed">Sim! Já está incluso no valor, sem
+                            custo extra.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. FINAL CTA SECTION -->
+        <section class="py-24 md:py-32 px-6 bg-forest text-center relative overflow-hidden">
+            <div class="max-w-4xl mx-auto relative z-10">
+                <h2 class="text-3xl md:text-5xl font-black tracking-tight text-white mb-12 leading-tight">
+                    Pare de perder dinheiro <br>
+                    <span class="text-gold">por falta de controle.</span>
+                </h2>
+
+                <a href="https://ambienteseguro.org.ua/c/f7d34d06b5"
+                    class="inline-flex items-center gap-4 px-12 py-6 bg-gold text-forest text-xl font-black rounded-full shadow-2xl hover:scale-105 transition-all active:scale-95 mb-8">
+                    Começar agora por R$ 37
+                    <i data-lucide="arrow-right" class="w-6 h-6"></i>
+                </a>
+
+                <div
+                    class="flex flex-wrap justify-center gap-6 text-[10px] text-white/30 font-black uppercase tracking-[0.2em]">
+                    <span>Pagamento único</span>
+                    <span class="w-1 h-1 rounded-full bg-gold/50 self-center"></span>
+                    <span>Garantia de 7 dias</span>
+                    <span class="w-1 h-1 rounded-full bg-gold/50 self-center"></span>
+                    <span>Atualizações inclusas</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-20 px-6 border-t border-slate-100">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-forest flex items-center justify-center shadow-lg shadow-forest/20">
+                        <span class="text-gold font-black text-3xl tracking-tighter">Á</span>
+                    </div>
+                    <span class="text-3xl font-black tracking-tighter text-forest">ÁPICE</span>
+                </div>
+                <div class="flex gap-10 text-slate-400 font-bold text-xs uppercase tracking-[0.2em]">
+                    <a href="#" class="hover:text-forest transition-colors">Termos</a>
+                    <a href="#" class="hover:text-forest transition-colors">Privacidade</a>
+                    <a href="#" class="hover:text-forest transition-colors">Suporte</a>
+                </div>
+                <p class="text-[10px] text-slate-300 font-bold uppercase tracking-[0.4em]">© 2026 Ápice Intelligent
+                    Systems. All Rights Reserved.</p>
+            </div>
+        </footer>
+
+        <script>
+            lucide.createIcons();
+        </script>
+</body>
+
+</html>
